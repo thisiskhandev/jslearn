@@ -1,0 +1,124 @@
+<!--  -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS</title>
+  </head>
+  <body>
+    <h1>JS</h1>
+    <button onclick="myfun()">Click me!</button>
+    <h2 id="heading">Heading</h2>
+    <h1 id="mainHead"></h1>
+    <!-- 	
+, => comma
+; => semi colon
+: => colon
+"" => double quotes
+'' => single quotes 
+-->
+    <!-- Variables -->
+    <script>
+      var a = "Test";
+      var a = "Test 2";
+      let b = "Test b"; // intisialize value
+      b = "abcd"; // update value
+      const c = "CCC";
+      // c = "DDDD";
+      // console.log(c);
+    </script>
+
+    <!-- Data Types -->
+    <script>
+      let name = "Ali"; // string
+      let num = 1234566; // number
+      let bool = true; // boolean 1
+      let bool2 = false; // boolean 0
+      let value = null; // Object
+      let difend = undefined; // Object
+      let carsArr = new Array("BMW", "Tesla", "Toyota", "Civic"); // Object . Prototype => Array
+      let carsArr2 = ["BMW", "Tesla", "Toyota"]; // Object . Prototype => Array
+      let obj = {
+        firstName: "Ali",
+        phone: 321546,
+        email: "info@ali.com",
+      }; // Object . Prototype => Object
+      let arrObj = [
+        {
+          id: 1,
+          firstName: "Ali",
+          phone: 321546,
+          email: "info@ali.com",
+        },
+        {
+          id: 2,
+          firstName: "Hassan",
+          phone: 321546,
+          email: "info@hasan.com",
+        },
+      ];
+      // console.log(obj);
+    </script>
+
+    <!-- Function -->
+    <script>
+      let test1 = "testing";
+      function test() {
+        // console.log("test");
+        // console.log(test1);
+      }
+      test(); // call
+    </script>
+
+    <!-- Consoles Types -->
+    <script>
+      // console.log("Ali");
+      // console.warn("Ali");
+      // console.error("Ali");
+    </script>
+
+    <!-- Writing in DOM -->
+    <script>
+      let cars = document.getElementById("heading");
+      let heading = document.getElementById("mainHead");
+      cars.innerText = carsArr.join(" ");
+      // console.log(carsArr);
+      heading.innerText = "<li>hi this is hassan!<li>";
+      // cars.innerHTML = "<ul><li>Test 1</li><li>Test 2</li></ul>";
+      document.write('<ol class="list">');
+      document.write("<li>" + carsArr[0] + "</li>");
+      document.write("<li>" + carsArr[1] + "</li>");
+      document.write("<li>" + carsArr[2] + "</li>");
+      document.write("<li>" + carsArr[3] + "</li>");
+      document.write("<li>" + carsArr[4] + "</li>");
+      document.write("<li>" + carsArr[5] + "</li>");
+      document.write("<li>" + carsArr[6] + "</li>");
+      document.write("</ol>");
+    </script>
+
+    <!-- Airthmetic -->
+    <script>
+      let val1 = 12;
+      let val2 = 3;
+      let ans = val1 + val2;
+      heading.innerHTML =
+        "The sum is: " + "<span style='color: red;'>" + ans + "<span>";
+    </script>
+    <!-- Condition -->
+    <script>
+      if (val1 > val2) {
+        console.log("Yes it is");
+      } else {
+        console.warn("No!");
+      }
+    </script>
+
+    <!-- Events -->
+    <script>
+      function myfun() {
+        heading.innerText = "I'm changed!";
+      }
+    </script>
+  </body>
+</html>
