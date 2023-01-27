@@ -1,0 +1,24 @@
+#banner {
+  display: block;
+  margin: auto;
+}
+img {
+  margin: 10px;
+  width: 200px;
+}
+.shots {
+  transform: scale(1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.shots:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+#banner {
+  width: 400px;
+}
+div#allImages {
+  display: flex;
+  justify-content: center;
+}
