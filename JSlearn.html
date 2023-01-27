@@ -8,19 +8,45 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JS</title>
+    <style>
+      #banner {
+        display: block;
+        margin: auto;
+      }
+      img {
+        margin: 10px;
+        width: 200px;
+      }
+      .shots {
+        transform: scale(1);
+        transition: .3s;
+        cursor: pointer;
+      }
+      .shots:hover {
+        transform: scale(1.1);
+        transition: .3s;
+      }
+      #banner {
+        width: 400px;
+      }
+      div#allImages {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
   </head>
   <body>
     <h1>JS</h1>
     <button onclick="myfun()">Click me!</button>
     <h2 id="heading">Heading</h2>
     <h1 id="mainHead"></h1>
-    <!-- 	
-, => comma
-; => semi colon
-: => colon
-"" => double quotes
-'' => single quotes 
--->
+    <div>
+      <h2>Images</h2>
+      <img id="banner" src="assets/gallary-1.jpg" alt="" srcset="" />
+      <div id="allImages"></div>
+      <!-- gallary-gallary-3 => comma
+; gallary-4 => gallary-5quotes
+'' => single quotes  -->
     <!-- Variables -->
     <script>
       var a = "Test";
@@ -108,6 +134,7 @@
       heading.innerHTML =
         "The sum is: " + "<span style='color: red;'>" + ans + "<span>";
     </script>
+
     <!-- Condition -->
     <script>
       if (val1 > val2) {
@@ -122,6 +149,39 @@
       function myfun() {
         heading.innerText = "I'm changed!";
       }
+    </script>
+
+    <!-- Image work -->
+    <script>
+      let bannerShot = document.getElementById("banner");
+      let baseLink = "assets/gallary-1.jpg";
+      let imgLinks = [
+        "assets/gallary-1.jpg",
+        "assets/gallary-2.jpg",
+        "assets/gallary-3.jpg",
+        "assets/gallary-4.jpg",
+        "assets/gallary-5.jpg",
+      ];
+      // console.log(imgLinks);
+
+      let divi = document.getElementById("allImages");
+      for (let i = 0; i < imgLinks.length; i++) {
+        // console.log(imgLinks[i]);
+        divi.insertAdjacentHTML(
+          "beforeend",
+          `<img class="shots" src=${imgLinks[i]}>`
+        );
+      }
+      let shots = document.querySelectorAll(".shots");
+      // console.log(shots);
+      shots.forEach((elem, ind) => {
+        elem.addEventListener("click", (e) => {
+          if(bannerShot.getAttribute("src") === elem.getAttribute("src")) {
+            alert("the image is same!");
+          }
+          bannerShot.setAttribute("src", elem.getAttribute("src"));
+        });
+      });
     </script>
   </body>
 </html>
