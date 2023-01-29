@@ -7,16 +7,16 @@ let cboxes = document.querySelectorAll(".cboxes");
 let colorBoxes = document.querySelectorAll(".colors");
 let colorTxt = document.querySelectorAll(".cboxes > h5");
 
-function removeCopiedTxt() {
+const removeCopiedTxt = () => {
   cboxes.forEach((elemTxt) => {
     let copiedTxt = elemTxt.children[0].children;
     if (copiedTxt.length > 0) {
       copiedTxt[0].remove();
     }
   });
-}
+};
 
-const colorFun = (event) => {
+const colorPallets = () => {
   // let colorCode = Math.floor(Math.random() * 16777215).toString(16);
   // const randomInt = (max, min) => Math.round(Math.random() * (max - min)) + min;
   // console.log(randomInt(90777215, 10777215));
@@ -38,6 +38,11 @@ const colorFun = (event) => {
     colorTxt[index].innerText = "#" + value.toUpperCase();
     colorBoxes[index].style.backgroundColor = "#" + value;
   });
+};
+colorPallets();
+
+const colorFun = (event) => {
+  colorPallets();
   removeCopiedTxt();
 };
 
