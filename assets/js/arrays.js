@@ -29,14 +29,21 @@ console.log(studentData);
 
 var fruits = ["apple", "banana", "orange", "papaya"];
 fruits[0] = fruits[0].toUpperCase();
-console.log(fruits.slice(1, 4));
+// console.log(fruits.slice(1, 4));
 
 //  Multidimentional Array
-var gradeYears = [
-  [1, "Ali", "Germany"],
-  [2, "Hassan", "Germany"],
-  [3, "Ali", "Germany"],
-  [4, "Ali", "Germany"],
-  [5, "Ali", "Germany"],
+// var gradeYears = new Array(
+//   [1, "Ali", "Germany"],
+//   [2, "Hassan", "Germany"],
+//   [3, "Ali", "Germany"],
+//   [4, "Ali", "Germany"],
+//   [5, "Ali", "Germany"]
+// );
+
+var multDimNums = [
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+  [[11, 22, 33, 44, 55], 2, 3, 4, 5],
 ];
-console.log(gradeYears[3][0]);
+// console.log(multDimNums[3][0][3]);
