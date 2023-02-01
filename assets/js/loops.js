@@ -29,25 +29,19 @@ let studentData = [
     name: "Salman",
     class: 9,
     address: "ABC 123",
-    phone: 123,
+    phone: 98465165,
   },
   {
     id: 3,
     name: "Hassan",
     class: 9,
     address: "ABC 123",
-    phone: 123,
+    phone: 23432432579,
   },
 ];
 
-// for (let stdD in studentData) {
-//   console.log(studentData[stdD]);
-// }
-
-// console.log(studentData[1].id);
-// console.log(studentData[2].name);
-// console.log(studentData[2].class);
-
+// console.log(studentData[0]);
+// console.log(Object.keys(studentData[1].phone).length);
 document.write('<table  border="3">');
 document.write(
   "<thead><tr><th>ID</th><th>Name</th><th>Class</th><th>Adress</th><th>Phone</th></tr></thead><tbody>"
@@ -57,8 +51,22 @@ for (var stD = 0; stD < studentData.length; stD++) {
   document.write("<td>" + studentData[stD].name + "</td>");
   document.write("<td>" + studentData[stD].class + "</td>");
   document.write("<td>" + studentData[stD].address + "</td>");
-  document.write("<td>" + studentData[stD].phone + "</td></tr>");
+  // document.write("<td>" + Object.values(studentData[stD].phone) + "</td></tr>");
+  /*
+  if (Object.keys(studentData[stD].phone).length > 0) {
+    document.write(
+      "<td>" + Object.values(studentData[stD].phone) + "</td></tr>"
+    );
+  } else {
+    document.write("<td>" + studentData[stD].phone + "</td></tr>");
+  }
+  */
+  document.write(
+    Object.keys(studentData[stD].phone).length > 0
+      ? "<td>" +
+          Object.values(studentData[stD].phone).join(" | ") +
+          "</td></tr>"
+      : "<td>" + studentData[stD].phone + "</td></tr>"
+  );
 }
 document.write("</tbody><table>");
-
-// for(var ind = 0; ind >=)
