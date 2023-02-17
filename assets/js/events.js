@@ -19,17 +19,40 @@ const removeCopiedTxt = () => {
 };
 
 const colorPallets = () => {
-  // let colorCode = Math.floor(Math.random() * 16777215).toString(16);
-  // const randomInt = (max, min) => Math.round(Math.random() * (max - min)) + min;
-  // console.log(randomInt(90777215, 10777215));
+  /*
   let arrColor = new Array(
-    Math.floor(Math.random() * 16717245).toString(16),
-    Math.floor(Math.random() * 16717205).toString(16),
-    Math.floor(Math.random() * 16717265).toString(16),
-    Math.floor(Math.random() * 16717235).toString(16),
-    Math.floor(Math.random() * 16717255).toString(16),
-    Math.floor(Math.random() * 16717295).toString(16)
-  );
+    // Math.floor(Math.random() * 16717245).toString(16)
+    Math.floor(Math.random() * Math.floor(Math.random() * 16000000)).toString(
+      16
+    ),
+    Math.floor(Math.random() * Math.floor(Math.random() * 16000000)).toString(
+      16
+    ),
+    Math.floor(Math.random() * Math.floor(Math.random() * 16000000)).toString(
+      16
+    ),
+    Math.floor(Math.random() * Math.floor(Math.random() * 16000000)).toString(
+      16
+    ),
+    Math.floor(Math.random() * Math.floor(Math.random() * 16000000)).toString(
+      16
+    ),
+    Math.floor(Math.random() * Math.floor(Math.random() * 16000000)).toString(
+      16
+    )
+  );*/
+  // Converting hexcode into array
+  let arrColor = [];
+  for (
+    let index = 0;
+    index < document.getElementById("color").children.length;
+    index++
+  ) {
+    let arrVal = Math.floor(
+      Math.random() * Math.floor(Math.random() * 16000000)
+    ).toString(16);
+    arrColor.push(arrVal);
+  }
   // Method 1
   // for (let i = 0; i < arrColor.length; i++) {
   //   colorTxt[i].innerText = arrColor[i];
