@@ -3,6 +3,8 @@
 function myfun() {
   heading.innerText = "I'm changed!";
 }
+
+/*  COLOR PALLET EVENTS */
 let cboxes = document.querySelectorAll(".cboxes");
 let colorBoxes = document.querySelectorAll(".colors");
 let colorTxt = document.querySelectorAll(".cboxes > h5");
@@ -41,9 +43,9 @@ const colorPallets = () => {
 };
 colorPallets();
 
-const colorFun = (event) => {
-  colorPallets();
+const colorFun = () => {
   removeCopiedTxt();
+  colorPallets();
 };
 
 cboxes.forEach((value, index) => {
@@ -73,3 +75,14 @@ cboxes.forEach((value, index) => {
     }
   });
 });
+
+/* BAKGROUND INPUT EVENTS */
+
+document.getElementById("bgInput").addEventListener("change", (e) => {
+  document.body.style.backgroundColor = e.target.value;
+});
+
+const resetBgHanlder = () => {
+  document.body.style.backgroundColor = "";
+  document.getElementById("bgInput").value = "";
+};
