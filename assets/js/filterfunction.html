@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Function</title>
+    <style>
+      div {
+        background-color: #eee;
+        margin: 10px 0;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Filter function</h1>
+    <div>
+      <h2>Get Names which are over 18 age</h2>
+      <button onclick="getAge()">Get Age</button>
+    </div>
+
+    <div>
+      <label for="initial">Starts with name Letter</label>
+      <input
+        type="text"
+        id="initial"
+        minlength="1"
+        maxlength="1"
+        pattern="[a-zA-z]"
+      /><br />
+      <button onclick="startsWithName()">Starts With Name</button>
+    </div>
+
+    <section>
+        <div class="cards">
+            
+        </div>
+    </section>
+
+    <script>
+      const peoples = [
+        {
+          id: 1,
+          name: "Hassan",
+          age: 26,
+          height: 5.7,
+        },
+        {
+          id: 2,
+          name: "Ahsan",
+          age: 20,
+          height: 5.1,
+        },
+        {
+          id: 3,
+          name: "Ali",
+          age: 14,
+          height: 6,
+        },
+        {
+          id: 4,
+          name: "Ayesha",
+          age: 16,
+          height: 5.5,
+        },
+        {
+          id: 5,
+          name: "Bilal",
+          age: 18,
+          height: 4.7,
+        },
+      ];
+
+      const getAge = () => {
+        const result = peoples.filter((values) => values.age >= 18);
+        console.table(result);
+      };
+
+      const startsWithName = () => {
+        const initial = document.getElementById("initial").value.toLowerCase();
+        // console.log(initial);
+        const result = peoples.filter((users) =>
+          users.name.toLowerCase().startsWith(initial)
+        );
+        console.table(result);
+      };
+    </script>
+  </body>
+</html>
